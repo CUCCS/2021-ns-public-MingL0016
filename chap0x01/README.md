@@ -50,12 +50,12 @@
 
 - 靶机直接访问攻击者主机
 ![](img/xp1-attacker.png)
-![](/img/kali1-attacker.png)
+![](img/kali1-attacker.png)
 ![](img/debian2-attacker.png)
-![](/img/xp2-attcaker.png)
+![](img/xp2-attcaker.png)
 
 - 攻击者主机无法直接访问靶机
-![](/img/attacker-victim.png)
+![](img/attacker-victim.png)
 
 - 网关可以直接访问攻击者主机和靶机
 ![](img/gateway-all.png)
