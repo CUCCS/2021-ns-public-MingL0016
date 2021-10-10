@@ -44,7 +44,7 @@ pkt = promiscping("172.16.111.109")
 sudo ip link set eth1 promisc on
 
 # 此时会发现输出结果里多出来了 PROMISC 
-ip link show enp0s3
+ip link show eth0
 ```
 ![](img/promiscon.png)
 ```bash
@@ -57,7 +57,7 @@ pkt = promiscping("172.16.111.109")
 ```bash
 # 在受害者主机上
 # 手动关闭该网卡的「混杂模式」
-sudo ip link set enp0s3 promisc off
+sudo ip link set eth0 promisc off
 ```
 ![](img/promiscoff.png)
 
@@ -96,7 +96,7 @@ sendp(arpspoofed)
 ```bash
 ip neigh
 ```
-
+![](img/arpp1.png)
 回到攻击者主机上的 scapy 交互式终端继续执行命令。
 
 ```python
@@ -123,6 +123,7 @@ ip neigh
 ```bash
 sudo arpspoof -i eth1 -t 172.16.111.109<想要劫持的目标主机> 172.16.111.1<想要伪装成的主机ip>
 ```
+![](img/arpp3.png)
 
 ## 实验四：基于scapy编写ARP投毒劫持工具
 
@@ -191,4 +192,5 @@ if __name__=='__main__':
 
 ```
 ## 参考资料
-[课程 · 实验四](https://c4pr1c3.github.io/cuc-ns/chap0x04/exp.html#)
+- [课程 · 实验四](https://c4pr1c3.github.io/cuc-ns/chap0x04/exp.html#)
+- [2021-ns-public-EddieXu1125/chap0x04/](https://github.com/CUCCS/2021-ns-public-EddieXu1125/tree/chap0x04/chap0x04)
